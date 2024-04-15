@@ -1,1 +1,2 @@
-BankAccountServiceTest.java must be located in org/informatics/bank because of package org.informatics.bank. To run unit tests JUnit must be set up.
+BankAccountServiceTest.java must be located in org/informatics/bank because of package org.informatics.bank. 
+To run unit tests JUnit must be set up.

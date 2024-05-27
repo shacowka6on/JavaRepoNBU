@@ -9,12 +9,12 @@ enum PaperSize {
 public class Paper {
     private PaperType type;
     private PaperSize size;
-    private double basePrice;
+    private Money basePrice;
 
-    public Paper(PaperType type, PaperSize size) {
+    public Paper(PaperType type, PaperSize size, String currency) {
         this.type = type;
         this.size = size;
-        this.basePrice = calculatePaperBasePrice(type, size);
+        this.basePrice = calculatePaperBasePrice(type, size, currency);
     }
 
     public PaperType getType() {
@@ -25,11 +25,11 @@ public class Paper {
         return size;
     }
 
-    public double getBasePrice() {
+    public Money getBasePrice() {
         return basePrice;
     }
 
-    public double calculatePaperBasePrice(PaperType type, PaperSize size) {
+    public Money calculatePaperBasePrice(PaperType type, PaperSize size, String currency) {
         double basePriceType;
         double sizeMultiplier;
 
@@ -69,6 +69,6 @@ public class Paper {
                 break;
         }
 
-        return basePriceType * sizeMultiplier;
+        return new Money(basePriceType * sizeMultiplier, currency);
     }
 }

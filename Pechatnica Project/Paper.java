@@ -1,5 +1,3 @@
-import java.util.Random;
-
 enum PaperType {
     REGULAR, GLOSSY, NEWSPAPER;
 }
